@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+  html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    background: #e0e0e0;  /* FULL GRAY BACKGROUND */
+    font-family: Arial, sans-serif;
+  }
+
+  h2 {
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  .gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 15px;
+    padding: 20px;
+  }
+
+  .gallery img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+    cursor: pointer;
+    background: white; /* helps if img fails to load */
+  }
+
+  /* Modal */
+  .modal {
+    display: none;
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.8);
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+  }
+
+  .modal:target {
+    display: flex;
+  }
+
+  .modal img {
+    max-width: 90%;
+    max-height: 90%;
+    border-radius: 10px;
+  }
+
+  .close {
+    position: fixed;
+    top: 20px;
+    right: 30px;
+    font-size: 40px;
+    color: white;
+    text-decoration: none;
+  }
+</style>
+</head>
+
+<body>
+
+<h2>Student Projects Gallery</h2>
+
+<div class="gallery">
+  <a href="#img1"><img src="img1.jpg"></a>
+  <a href="#img2"><img src="img2.jpg"></a>
+  <a href="#img3"><img src="img3.jpg"></a>
+  <a href="#img4"><img src="img4.jpg"></a>
+</div>
+
+<!-- Modals -->
+<div id="img1" class="modal"><a class="close" href="#">&times;</a><img src="img1.jpg"></div>
+<div id="img2" class="modal"><a class="close" href="#">&times;</a><img src="img2.jpg"></div>
+<div id="img3" class="modal"><a class="close" href="#">&times;</a><img src="img3.jpg"></div>
+<div id="img4" class="modal"><a class="close" href="#">&times;</a><img src="img4.jpg"></div>
+
+</body>
+</html>
